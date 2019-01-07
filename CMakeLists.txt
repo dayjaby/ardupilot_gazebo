@@ -1,8 +1,11 @@
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-
-
+cmake_minimum_required(VERSION 2.8.3)
 project(ardupilot_sitl_gazebo)
 
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs std_srvs geometry_msgs nav_msgs tf dynamic_reconfigure message_generation)
+include_directories(include ${catkin_INCLUDE_DIRS})
 
 #######################
 ## Find Dependencies ##
@@ -11,8 +14,8 @@ project(ardupilot_sitl_gazebo)
 find_package(gazebo REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
-if("${GAZEBO_VERSION}" VERSION_LESS "7.0")
-    message(FATAL_ERROR "You need at least Gazebo 7.0. Your version: ${GAZEBO_VERSION}")
+if("${GAZEBO_VERSION}" VERSION_LESS "9.0")
+    message(FATAL_ERROR "You need at least Gazebo 9.0. Your version: ${GAZEBO_VERSION}")
 else()
     message("Gazebo version: ${GAZEBO_VERSION}")
 endif()
@@ -28,7 +31,6 @@ include_directories(
         )
 
 link_libraries(
-        ${CMAKE_CURRENT_BINARY_DIR}
         ${GAZEBO_LIBRARIES}
         )
 
