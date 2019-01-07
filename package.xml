@@ -1,0 +1,12 @@
+<package>
+  <name>ardupilot_gazebo</name>
+  <version>0.1.1</version>
+  <description>ardupilot/drone models and worlds for using in gazebo</description>
+  <maintainer email="dayjaby@gmail.com">David Jablonski</maintainer>
+
+  <license>TODO</license>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
