@@ -20,6 +20,8 @@ else()
     message("Gazebo version: ${GAZEBO_VERSION}")
 endif()
 
+catkin_add_env_hooks(ardupilot_sitl_gazebo SHELLS sh DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/env-hooks)
+
 ###########
 ## Build ##
 ###########
