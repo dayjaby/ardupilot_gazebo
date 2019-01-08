@@ -22,11 +22,11 @@
 #include "gazebo/physics/physics.hh"
 #include "gazebo/sensors/SensorManager.hh"
 #include "gazebo/transport/transport.hh"
-#include "plugins/LiftDragPlugin.hh"
+#include "../include/LiftDragPlugin.hh"
 
 using namespace gazebo;
 
-GZ_REGISTER_MODEL_PLUGIN(LiftDragPlugin)
+GZ_REGISTER_WORLD_PLUGIN(LiftDragPlugin)
 
 /////////////////////////////////////////////////
 LiftDragPlugin::LiftDragPlugin() : cla(1.0), cda(0.01), cma(0.01), rho(1.2041)

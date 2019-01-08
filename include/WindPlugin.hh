@@ -18,7 +18,7 @@
 #define GAZEBO_PLUGINS_WINDPLUGIN_HH_
 
 #include <ignition/math/Vector3.hh>
-
+#include <ignition/math/Angle.hh>
 #include "gazebo/common/Event.hh"
 #include "gazebo/common/Plugin.hh"
 #include "gazebo/physics/physics.hh"

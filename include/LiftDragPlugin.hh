@@ -35,7 +35,7 @@ namespace gazebo
     public: virtual void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf);
 
     public: ignition::math::Vector3d LinearVel(
-            const physics::physics *physics
+            const physics::PhysicsEngine *physics,
             const physics::Entity *_entity);
 
     /// \brief Callback for World Update events.
@@ -46,6 +46,6 @@ namespace gazebo
 
     /// \brief Connection to World Update events.
     private: event::ConnectionPtr updateConnection;
-}
+};
 
 #endif

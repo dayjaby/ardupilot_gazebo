@@ -45,7 +45,7 @@ set (plugins_single_header
         # ArduCopterIRLockPlugin
 				ArduCopterPlugin
         GimbalSmall2dPlugin
-	# WindPlugin
+	#WindPlugin
         )
 
 # add_library(ArduCopterIRLockPlugin SHARED src/ArduCopterIRLockPlugin.cc)
@@ -57,6 +57,12 @@ target_link_libraries(ArduPilotPlugin ${GAZEBO_LIBRARIES})
 add_library(ArduCopterPlugin SHARED src/ArduCopterPlugin.cc)
 target_link_libraries(ArduCopterPlugin ${GAZEBO_LIBRARIES})
 
+add_library(LiftDragPlugin SHARED src/LiftDragPlugin.cc)
+target_link_libraries(LiftDragPlugin ${GAZEBO_LIBRARIES})
+
+add_library(WindPlugin SHARED src/WindPlugin.cc)
+target_link_libraries(WindPlugin ${GAZEBO_LIBRARIES})
+
 if("${GAZEBO_VERSION}" VERSION_LESS "8.0")
     add_library(GimbalSmall2dPlugin SHARED src/GimbalSmall2dPlugin.cc)
     target_link_libraries(GimbalSmall2dPlugin ${GAZEBO_LIBRARIES})
@@ -66,3 +72,5 @@ endif()
 # install(TARGETS ArduCopterIRLockPlugin DESTINATION ${GAZEBO_PLUGIN_PATH})
 install(TARGETS ArduPilotPlugin DESTINATION ${GAZEBO_PLUGIN_PATH})
 install(TARGETS ArduCopterPlugin DESTINATION ${GAZEBO_PLUGIN_PATH})
+install(TARGETS LiftDragPlugin DESTINATION ${GAZEBO_PLUGIN_PATH})
+install(TARGETS WindPlugin DESTINATION ${GAZEBO_PLUGIN_PATH})
